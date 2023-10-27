@@ -72,9 +72,9 @@ const FilterButton = () => {
                                 <RoomButton roomType={'床位'} margin={'mt-6'}/>
                                 <RoomButton roomType={'衛浴'} margin={'mt-6'}/>
                             </div>
-                            <div className='mx-5 py-8 border-b border-bordergray'>
+                            <div className='mx-5 py-8 border-b border-bordergray '>
                                 <h2 className='text-2xl font-normal mb-5'>住宿類型</h2>
-                                <div className='grid grid-cols-4 w-full h-full gap-4'>
+                                <div className='grid grid-cols-4 w-full gap-4'>
                                     <LivingStyleButton />
                                 </div>
                             </div>
