@@ -36,12 +36,17 @@ export default function RangeSlider({value, setValue}) {
     if(newValue[1]-newValue[0] < 5) return
     setValue(newValue);
   };
-  const range0Color = (i) => (`${value[0] < i * 2 ? 'bg-slate-900' : 'bg-bordergray'}`)
-  const range1Color = (i) => (`${value[1] > i * 2 ? 'bg-slate-900' : 'bg-bordergray'}`)
-  const rangeIndex0Color = (i) =>(`${value[0] < 2 ? 'bg-slate-900' : 'bg-bordergray'}`)
+  const calculateBarColor = (index) => {
+    if (index === 0) {
+      return value[0] < 2 ? 'bg-slate-900' : 'bg-bordergray';
+    } else {
+      return value[0] < index * 2 && value[1] > index * 2 ? 'bg-slate-900' : 'bg-bordergray';
+    }
+  };
+  
   const barChart = () => {
     return generatedArray.map((v, index) => (
-        <div className={`absolute w-[1.7%] rounded-t-sm ${index === 0 ? rangeIndex0Color(index) : range0Color(index)} ${range1Color(index)}  bottom-4 z-[-1] `} style={{ left: `${2 + index * 2}%`, height: `${v}%` }} key={index} />
+        <div className={`absolute w-[1.7%] rounded-t-sm ${calculateBarColor(index)}  bottom-4 z-[-1] `} style={{ left: `${2 + index * 2}%`, height: `${v}%` }} key={index} />
     ));
 };
   return (
