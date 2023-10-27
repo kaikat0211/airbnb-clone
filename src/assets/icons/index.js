@@ -1,4 +1,3 @@
-import searchIcon from './searchicon.svg'
 import filter from './filter.svg'
 import 世界頂端 from './世界頂端.jpeg';
 import 三角屋 from './三角屋.jpeg';
@@ -131,7 +130,6 @@ export {
     露營車,
     驚艷泳池,
     filter,
-    searchIcon,
     leftArrow,
     rightArrow,
     Luxe,

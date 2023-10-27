@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { searchIcon } from '../assets/icons'
 import { headerLogo } from '../assets/images'
 import { IoSearch, IoPersonCircleSharp } from 'react-icons/io5'
 import { RiGlobalLine } from 'react-icons/ri'
