@@ -55,7 +55,7 @@ export default function RangeSlider({value, setValue}) {
         getAriaLabel={() => 'Temperature range'}
         value={value}
         onChange={handleChange}
-        valueLabelDisplay="auto"
+        valueLabelDisplay="off"
         valueLabelFormat={valueLabelFormat}
         min={0}
         max={100}

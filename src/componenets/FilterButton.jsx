@@ -7,6 +7,7 @@ import HousesButton from './HousesButton';
 import RoomButton from './RoomButton'
 import PriceRange from './PriceRange';
 import LivingStyleButton from './LivingStyleButton';
+import Facilities from './Facilities';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -79,17 +80,10 @@ const FilterButton = () => {
                                 </div>
                             </div>
                             <div className='py-8 mx-5 border-b border-bordergray'>
-                                <h2 className='text-2xl font-normal mb-5'>臥室和床鋪</h2>
-                                <RoomButton roomType={'臥室'}/>
-                                <RoomButton roomType={'床位'} margin={'mt-6'}/>
-                                <RoomButton roomType={'衛浴'} margin={'mt-6'}/>
+                                <h2 className='text-2xl font-normal mb-5'>設備與服務</h2>
+                                <Facilities />
                             </div>
-                            <div className='py-8 mx-5 border-b border-bordergray'>
-                                <h2 className='text-2xl font-normal mb-5'>臥室和床鋪</h2>
-                                <RoomButton roomType={'臥室'}/>
-                                <RoomButton roomType={'床位'} margin={'mt-6'}/>
-                                <RoomButton roomType={'衛浴'} margin={'mt-6'}/>
-                            </div>
+                            
                             <div className=' py-5 px-5 w-full flex justify-between items-center border-t sticky bottom-0 z-10' style={{background:"#FFFFFF"}}>
                                 <span className='underline underline-offset-2 cursor-pointer'>清除全部</span>
                                 <button className='py-3 px-6 bg-slate-800 hover:bg-slate-950 text-white rounded-md'>顯示 668 間房源</button>

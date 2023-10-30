@@ -61,7 +61,8 @@ import {
     驚艷泳池,
     cabin,
     apartment,
-    house
+    house,
+    hotel
 } from '../assets/icons'
 import { 
     house1,
@@ -505,4 +506,44 @@ export const livingStyle = [
         iconURL:cabin,
         style:'待客小屋'      
     },
+    { 
+        iconURL:hotel,
+        style:'飯店'      
+    },
 ]
+export const facilities = {
+    '基本設施': [
+      'WiFi',
+      '廚房',
+      '洗衣機',
+      '烘衣機',
+      '空調設備',
+      '暖氣',
+      '專屬工作空間',
+      '電視機',
+      '吹風機',
+      '熨斗'
+    ],
+    '設施': [
+      '游泳池',
+      '按摩浴池',
+      '免費停車',
+      '電動車充電器',
+      '嬰兒床',
+      '加大雙人床',
+      '健身房',
+      '烤肉區',
+      '早餐',
+      '室內壁爐',
+      '可吸煙'
+    ],
+    '地點': [
+      '濱海',
+      '濱水'
+    ],
+    '安全': [
+      '煙霧警報器',
+      '一氧化碳警報器'
+    ]
+  };
+  

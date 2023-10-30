@@ -68,6 +68,10 @@ import cross from './cross.svg'
 import house from './house.svg'
 import apartment from './apartment.svg'
 import cabin from './cabin.svg'
+import hotel from './hotel.svg'
+import checked from './checked.svg'
+import nochecked from './nochecked.svg'
+
 export {
     世界頂端,
     三角屋,
@@ -138,5 +142,8 @@ export {
     cross,
     house,
     apartment,
-    cabin
+    cabin,
+    hotel,
+    checked,
+    nochecked
 };
