@@ -8,6 +8,20 @@ import RoomButton from './RoomButton'
 import PriceRange from './PriceRange';
 import LivingStyleButton from './LivingStyleButton';
 import Facilities from './Facilities';
+import ToggleButtonForFilter from './ToggleButtonForFilter';
+import BookingButton from './BookingButton';
+import Language from './Language';
+const keyframes = `
+    @keyframes slide-top {
+      0% {
+        transform: translate(-50%, 100%);
+      }
+      100% {
+        transform: translate(-50%, -50%);
+      }
+    }
+  `;
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -18,6 +32,15 @@ const style = {
     bgcolor: 'background.paper',
     boxShadow: 24,
     borderRadius:'1.9%',
+    WebkitOverflowScrolling: 'touch', 
+    scrollbarWidth: 'none', 
+    '&::-webkit-scrollbar': {
+        display: 'none', 
+    },
+    animationName: 'slide-top',
+    animationDuration: '0.5s',
+    animationTimingFunction: 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
+    animationFillMode: 'both',
   };
   
 const FilterButton = () => {
@@ -40,6 +63,7 @@ const FilterButton = () => {
                     <img src={filter} width={16}/>
                     篩選條件
         </button>
+        <style>{keyframes}</style>
                 <Modal
                     open={open}
                     onClose={handleClose}
@@ -47,8 +71,8 @@ const FilterButton = () => {
                     aria-describedby="modal-modal-description"
                     style={{ zIndex: 1000 }}
                 >
-                        <Box sx={style} className='overflow-auto relative'>
-                            <div className='flex items-center justify-center border-b border-bordergray py-5 sticky top-0 z-10' style={{background:"#FFFFFF"}}>
+                        <Box sx={style} className='overflow-auto relative '>
+                            <div className='flex items-center justify-center border-b border-bordergray py-5 sticky top-0 z-20' style={{background:"#FFFFFF"}}>
                                 <button className='rounded-full hover:bg-hoverbg absolute left-4' onClick={handleClose}>
                                     <img src={cross} alt='cross' width={28} height={28}/>
                                 </button>
@@ -81,10 +105,36 @@ const FilterButton = () => {
                             </div>
                             <div className='py-8 mx-5 border-b border-bordergray'>
                                 <h2 className='text-2xl font-normal mb-5'>設備與服務</h2>
-                                <Facilities />
+                                <Facilities normal={true}/>
                             </div>
-                            
-                            <div className=' py-5 px-5 w-full flex justify-between items-center border-t sticky bottom-0 z-10' style={{background:"#FFFFFF"}}>
+                            <div className='py-8 mx-5 border-b border-bordergray'>
+                                <h2 className='text-2xl font-normal mb-5'>預訂選項</h2>
+                                <div className='flex flex-col gap-5'>
+                                    <BookingButton title={'即時預訂'} description={'無需等待房東批准即可預訂的房源'}/>
+                                    <BookingButton title={'自助入住'} description={'抵達後可輕鬆進入房源'}/>
+                                    <BookingButton title={'允許攜帶寵物'} description={'會攜帶服務性動物嗎？'}/>
+                                </div>
+                            </div>
+                            <div className='py-8 mx-5 border-b border-bordergray'>
+                                <h2 className='text-2xl font-normal mb-5'>無障礙設施與服務</h2>
+                                <Facilities accessible={true}/>
+                            </div>
+                            <div className='py-8 mx-5 border-b border-bordergray'>
+                                <h2 className='text-2xl font-normal mb-5'>高級住宿</h2>
+                                <div className='flex justify-between items-center'>
+                                    <div>
+                                        <p className='font-extralight text-black text-md'>超讚房東</p>
+                                        <p className='font-extralight text-sm' style={{color:'#7a7a7a'}}>向獲得認可的房東租住房源</p>
+                                        <p className='underline text-sm mt-1 cursor-pointer'>了解詳情</p>
+                                    </div>
+                                    <ToggleButtonForFilter />
+                                </div>
+                            </div>
+                            <div className='py-8 mx-5 border-b border-bordergray'>
+                                <h2 className='text-2xl font-normal mb-5'>房東語言</h2>
+                                <Language />
+                            </div>
+                            <div className=' py-5 px-5 w-full flex justify-between items-center border-t sticky bottom-0 z-20' style={{background:"#FFFFFF"}}>
                                 <span className='underline underline-offset-2 cursor-pointer'>清除全部</span>
                                 <button className='py-3 px-6 bg-slate-800 hover:bg-slate-950 text-white rounded-md'>顯示 668 間房源</button>
                             </div>
