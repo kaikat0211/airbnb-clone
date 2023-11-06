@@ -7,7 +7,6 @@ const FilterIconsOverFlow = ({ iconContainerRef }) => {
     className={`flex gap-[2.7rem] items-center md:w-4/5 lg:w-4/5 xl:w-[70%] 2xl:w-3/4 relative overflow-x-auto overflow-y-hidden scrollbar-hide ease-out duration-1000 scroll-smooth`}
     ref={iconContainerRef}
     >
-      {/* <div></div> */}
       {Icons.map((icon) => (
         <div key={icon.categories} className='relative gap-1 cursor-pointer group flex flex-col items-center' 
         onClick={()=>{setSelected(icon.categories)}}
