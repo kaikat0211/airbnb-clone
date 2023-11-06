@@ -99,14 +99,14 @@ const Nav = () => {
                             <AiOutlineMenu className='max-lg:text-lg text-2xl'/>
                             <IoPersonCircleSharp className='max-lg:text-[30px] text-[36px]' style={{color:"#717171"}}/>
                         </button>
-                        <div className={`absolute md:w-[21%] lg:w-[17%] xl:w-[15%] 2xl:w-[12%]   h-[80%] rounded-xl bg-white right-[80px] max-xl:right-[40px]  bottom-[-35px] z-20 py-2.5 border border-1 ${!memberActive && 'hidden'}`}
+                        <div className={`absolute md:w-[21%] lg:w-[17%] xl:w-[15%] 2xl:w-[12%]    rounded-xl bg-white right-[80px] max-xl:right-[40px] bottom-[-31%] z-20 py-2.5 border border-1 ${!memberActive && 'hidden'}`}
                         ref={divRef}
                         style={{ boxShadow: "9px -9px 18px #f5f5f5, -9px 9px 18px #ffffff" }}>
                             <div className='flex flex-col text-sm'>
                                 <span className='hover:bg-hoverbg cursor-pointer py-2.5 px-3.5 font-semibold'>註冊</span>
                                 <span className='hover:bg-hoverbg cursor-pointer py-2.5 px-3.5'>登入</span>
                                 <div className='w-full h-[1px] border border-1 border-bordergray my-2'></div>
-                                <span className='hover:bg-hoverbg cursor-pointer py-2.5 px-3.5'>在Airbnb上發布房源</span>
+                                <span className='hover:bg-hoverbg cursor-pointer py-2.5 px-3.5'>在 Airbnb 上發布房源</span>
                                 <span className='hover:bg-hoverbg cursor-pointer py-2.5 px-3.5'>說明中心</span>
                             </div>
                         </div>
