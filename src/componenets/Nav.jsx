@@ -7,7 +7,7 @@ import ToggleButton from './ToggleButton'
 import { leftArrow, rightArrow } from '../assets/icons';
 import FilterIcons from './FilterIcons'
 import FilterButton from './FilterButton'
-import FilterIconsOverFlow from './FilterIconsOverflow'
+import FilterIconsOverFlow from './FilterIconsOverFlow'
 
 const Nav = () => {
     const [memberActive, setMemberActive] = useState(false)
