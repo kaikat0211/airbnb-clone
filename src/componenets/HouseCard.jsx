@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { house1 } from '../assets/images'
 import { AiFillStar} from 'react-icons/ai'
 import { heart } from '../assets/icons'
@@ -6,11 +6,14 @@ import { redHeart } from '../assets/icons'
 
 const HouseCard = ({src, country, rating, distance, date, price}) => {
     const [liked, setLiked] = useState(false)
+    const toggleLiked = useCallback(()=>{
+        setLiked(prev => !prev)
+    },[])
   return (
-    <div className='w-[305px] cursor-pointer'>
+    <div className='w-full xl: cursor-pointer'>
         <div className='h-[290px] relative'>
             <img src={ src } className='object-cover w-full h-full rounded-xl'/>
-            <img src={ liked ? redHeart : heart } width={25} height={20} className='absolute top-3 right-3 z-5 ' onClick={()=> setLiked(!liked) }/>
+            <img src={ liked ? redHeart : heart } width={25} height={20} className='absolute top-3 right-3 z-5 ' onClick={toggleLiked}/>
         </div>
         <div className='flex justify-between w-full mt-3'>
             <span>{country}</span>

@@ -28,6 +28,7 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: '42%',
+    minWidth:'768px',
     height: '87%',
     bgcolor: 'background.paper',
     boxShadow: 24,
