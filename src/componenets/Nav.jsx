@@ -67,7 +67,7 @@ const Nav = () => {
         else setMemberActive(false)
       };
   return (
-    <header className='sticky z-10'>
+    <header className='sticky z-10 top-0 bg-white'>
         <nav className='flex justify-between items-center xl:padding md:px-[40px] border-b-2 py-5'>
             <div className='xl:w-2/5 md:w-1/6'>
                 <a href='/'>
@@ -113,8 +113,7 @@ const Nav = () => {
                     </div>
                 </div>
         </nav>
-        <div className='py-10 padding flex items-center justify-between relative'>
-            {/* <FilterIcons /> */}
+        <div className='py-8 padding flex items-center justify-between relative'>
             <button className={`absolute top-[30%] bg-white py-3 z-10 ${!showLeftButton && 'hidden'}`}
             onClick={scrollLeft}
             >
