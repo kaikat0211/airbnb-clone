@@ -60,7 +60,7 @@ const FilterButton = () => {
     const description = typeDescription[activeType];
   return (
     <>
-        <button className='border-2 rounded-2xl border-bordergray flex items-center gap-2.5 p-4 font-semibold ' onClick={handleOpen}>
+        <button className='border rounded-2xl border-bordergray flex items-center gap-2.5 p-4 text-sm' onClick={handleOpen}>
                     <img src={filter} width={16}/>
                     篩選條件
         </button>

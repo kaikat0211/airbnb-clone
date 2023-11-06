@@ -4,11 +4,46 @@ import { IoSearch, IoPersonCircleSharp } from 'react-icons/io5'
 import { RiGlobalLine } from 'react-icons/ri'
 import { AiOutlineMenu } from 'react-icons/ai'
 import ToggleButton from './ToggleButton'
+import { leftArrow, rightArrow } from '../assets/icons';
 import FilterIcons from './FilterIcons'
 import FilterButton from './FilterButton'
+import FilterIconsOverFlow from './FilterIconsOverflow'
 
 const Nav = () => {
     const [memberActive, setMemberActive] = useState(false)
+    const [showLeftButton, setShowLeftButton] = useState(false);
+    const [showRightButton, setShowRightButton] = useState(true);
+    const iconContainerRef = useRef(null);
+    const scrollLeft = () => {
+        if (iconContainerRef.current) {
+        const container = iconContainerRef.current;
+        const scrollAmount = 800;
+        container.scrollLeft -= scrollAmount;
+        }
+    };
+
+    const scrollRight = () => {
+        if (iconContainerRef.current) {
+        const container = iconContainerRef.current;
+        const scrollAmount = 800;
+        container.scrollLeft += scrollAmount;
+        }
+    };
+    useEffect(() => {
+        const container = iconContainerRef.current;
+        const handleScroll = () => {
+          setShowLeftButton(container.scrollLeft > 0);
+          setShowRightButton(container.scrollLeft + 2 < (container.scrollWidth - container.clientWidth));
+        };
+    
+        container.addEventListener('scroll', handleScroll);
+    
+        handleScroll();
+    
+        return () => {
+          container.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
     const divRef = useRef(null)
     const buttonRef = useRef(null)
     useEffect(() => {
@@ -78,9 +113,20 @@ const Nav = () => {
                     </div>
                 </div>
         </nav>
-        <div className='py-10 padding flex items-center justify-between'>
-            <FilterIcons />
-            <div className='flex gap-5'>
+        <div className='py-10 padding flex items-center justify-between relative'>
+            {/* <FilterIcons /> */}
+            <button className={`absolute top-[30%] bg-white py-3 z-10 ${!showLeftButton && 'hidden'}`}
+            onClick={scrollLeft}
+            >
+            <img className='p-0.5 border-2 rounded-full hover:shadow-md' src={leftArrow} width={30} height={30}/>
+            </button>
+            <FilterIconsOverFlow iconContainerRef={iconContainerRef}/>
+            <button className={`absolute top-[30%] 2xl:left-[73.5%] xl:left-[67%] lg:left-[81%] md:left-[75%] py-3 bg-white  ${!showRightButton && 'hidden'}`}
+            onClick={scrollRight}
+            >
+            <img src={rightArrow} className='p-0.5 border-2 rounded-full  hover:shadow-md' width={30} height={30}/>
+            </button>
+            <div className='flex gap-5 '>
                 <FilterButton />
                 <ToggleButton />
             </div>
