@@ -4,7 +4,7 @@ const FilterIconsOverFlow = ({ iconContainerRef }) => {
   const [selected, setSelected] = useState('三角屋')
   return (
     <div 
-    className={`flex gap-[2.7rem] items-center md:w-4/5 lg:w-4/5 xl:w-[70%] 2xl:w-3/4 relative overflow-x-auto overflow-y-hidden scrollbar-hide ease-out duration-1000 scroll-smooth`}
+    className={`flex gap-[2.7rem] items-center md:w-4/5 lg:w-4/5 xl:w-[70%] 2xl:w-3/4 relative overflow-x-auto h-full py-3 scrollbar-hide ease-out duration-1000 scroll-smooth`}
     ref={iconContainerRef}
     >
       {Icons.map((icon) => (

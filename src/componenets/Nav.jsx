@@ -114,13 +114,13 @@ const Nav = () => {
                 </div>
         </nav>
         <div className='py-8 padding flex items-center justify-between relative'>
-            <button className={`absolute top-[30%] bg-white py-3 z-10 ${!showLeftButton && 'hidden'}`}
+            <button className={`absolute top-[30%] bg-white pt-3 pb-5 z-10 ${!showLeftButton && 'hidden'}`}
             onClick={scrollLeft}
             >
             <img className='p-0.5 border-2 rounded-full hover:shadow-md' src={leftArrow} width={30} height={30}/>
             </button>
             <FilterIconsOverFlow iconContainerRef={iconContainerRef}/>
-            <button className={`absolute top-[30%] 2xl:left-[73.5%] xl:left-[67%] lg:left-[81%] md:left-[75%] py-3 bg-white  ${!showRightButton && 'hidden'}`}
+            <button className={`absolute top-[30%] 2xl:left-[73.5%] xl:left-[67%] lg:left-[81%] md:left-[75%] pt-3 pb-5 bg-white  ${!showRightButton && 'hidden'}`}
             onClick={scrollRight}
             >
             <img src={rightArrow} className='p-0.5 border-2 rounded-full  hover:shadow-md' width={30} height={30}/>
