@@ -47,7 +47,7 @@ export default function RangeSlider({value, setValue}) {
   const barChart = () => {
     return generatedArray.map((v, index) => (
         <div className={`absolute w-[1.7%] rounded-t-sm ${calculateBarColor(index)}  
-         max-3xl:bottom-[16%] z-[-1] `} style={{ left: `${2 + index * 2}%`, height: `${v}%` }} key={index} />
+         2xl:bottom-[16%] xl:bottom-[16%] lg:bottom-[16%] md:bottom-[16%] z-[-1] `} style={{ left: `${2 + index * 2}%`, height: `${v}%` }} key={index} />
     ));
 };
   return (
