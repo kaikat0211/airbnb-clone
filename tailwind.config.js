@@ -9,6 +9,9 @@ export default {
       colors: {
         "hoverbg": "#F7F7F7",
         "bordergray" : "#DDDDDD"
+      },
+      screens: {
+        "3xl": "1800px"
       }
     },
   },
