@@ -120,7 +120,7 @@ const Nav = () => {
             <img className='p-0.5 border-2 rounded-full hover:shadow-md' src={leftArrow} width={30} height={30}/>
             </button>
             <FilterIconsOverFlow iconContainerRef={iconContainerRef}/>
-            <button className={`absolute top-[30%] 2xl:left-[71%] xl:left-[66%] lg:left-[81%] md:left-[75%] pt-3 pb-5 bg-white  ${!showRightButton && 'hidden'}`}
+            <button className={`absolute top-[30%] 3xl:left-[74%] 2xl:left-[72%] xl:left-[66%] lg:left-[81%] md:left-[75%] pt-3 pb-5 bg-white  ${!showRightButton && 'hidden'}`}
             onClick={scrollRight}
             >
             <img src={rightArrow} className='p-0.5 border-2 rounded-full  hover:shadow-md' width={30} height={30}/>
