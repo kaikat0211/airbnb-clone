@@ -26,7 +26,7 @@ const FilterIcons = () => {
         </div>
       ))}
       {showRightArrow &&<button className='absolute p-0.5 border-2 rounded-full right-[-3%] hover:shadow-md' onClick={()=> moveRange(7)}>
-        <img src={rightArrow} width={28} height={28}/>
+        <img src={rightArrow} width={28} height={28} />
       </button>}
     </div>
   );
